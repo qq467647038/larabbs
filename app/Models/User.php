@@ -7,6 +7,7 @@ use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
+use App\Models\Reply;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {
@@ -20,6 +21,11 @@ class User extends Authenticatable implements MustVerifyEmailContract
     protected $fillable = [
         'name', 'email', 'password', 'introduction', 'avatar'
     ];
+	
+	public function replies()
+	{
+		return $this->hasMany(Reply::class);
+	}
 
     /**
      * The attributes that should be hidden for arrays.

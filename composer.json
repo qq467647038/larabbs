@@ -34,12 +34,7 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true,
-        "platform": {
-            "ext-pcntl": "7.1",
-            "ext-posix": "7.1"
-
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
