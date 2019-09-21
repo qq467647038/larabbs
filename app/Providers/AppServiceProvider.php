@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Topic;
 use App\Observers\TopicObserver;
+use App\Models\Reply;
+use App\Observers\ReplyObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
     {
         // 注册观察器
         Topic::observe(TopicObserver::class);
+        Reply::observe(ReplyObserver::class);
     }
 }
