@@ -9,6 +9,8 @@ use App\Models\Reply;
 use App\Observers\ReplyObserver;
 use App\Models\Link;
 use App\Observers\LinkObserver;
+use App\Models\User;
+use App\Observers\UserObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,5 +37,6 @@ class AppServiceProvider extends ServiceProvider
         Topic::observe(TopicObserver::class);
         Reply::observe(ReplyObserver::class);
         Link::observe(LinkObserver::class);
+        User::observe(UserObserver::class);
     }
 }
