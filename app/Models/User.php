@@ -22,6 +22,15 @@ class User extends Authenticatable implements MustVerifyEmailContract
 		notify as protected laravelNotify;
 	}
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'password', 'introduction', 'avatar', 'phone'
+    ];
+
     public function setAvatarAttribute($path)
     {
         // 如果不是 `http` 子串开头，那就是从后台上传的，需要补全 URL
@@ -67,15 +76,6 @@ class User extends Authenticatable implements MustVerifyEmailContract
         $this->save();
         $this->unreadNotifications->markAsRead();
     }
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password', 'introduction', 'avatar'
-    ];
 	
 	public function replies()
 	{
