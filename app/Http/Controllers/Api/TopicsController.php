@@ -10,6 +10,11 @@ use App\Models\User;
 
 class TopicsController extends Controller
 {
+    public function show(Topic $topic)
+    {
+        return $this->response->item($topic, new TopicTransformer());
+    }
+	
     public function userIndex(User $user, Request $request)
     {
         $topics = $user->topics()->recent()
