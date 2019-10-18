@@ -8,7 +8,7 @@ use App\Transformers\NotificationTransformer;
 class NotificationsController extends Controller
 {
     public function index()
-    {
+    {echo 1;exit;
         $notifications = $this->user->notifications()->paginate(20);
 
         return $this->response->paginator($notifications, new NotificationTransformer());

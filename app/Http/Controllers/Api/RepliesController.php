@@ -21,7 +21,7 @@ class RepliesController extends Controller
             ->setStatusCode(201);
     }
 	
-    public function userIndex(User $user)
+    public function userIndex(ReplyRequest $request, User $user)
     {
 		app(\Dingo\Api\Transformer\Factory::class)->disableEagerLoading();
 		
@@ -46,7 +46,7 @@ class RepliesController extends Controller
         return $this->response->noContent();
     }
 	
-    public function index(Topic $topic)
+    public function index(ReplyRequest $request, Topic $topic)
     {
 		app(\Dingo\Api\Transformer\Factory::class)->disableEagerLoading();
         $replies = $topic->replies()->paginate(20);
