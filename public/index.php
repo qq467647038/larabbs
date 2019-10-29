@@ -1,5 +1,5 @@
 <?php
-
+// var_dump(json_decode('{"status":"0","message":"\u6682\u65e0\u6e20\u9053\u53ef\u7528","data":[]}', true));exit;
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
